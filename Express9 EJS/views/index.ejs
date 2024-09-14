@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- this helps to reduce code redundancy and can be used with even html body -->
+    <%- include('./partials/navigation.ejs')%>
+    <hr />
+    <h1>EJS TEMPLATE ENGINE</h1>
+    <p>hello anil pandey how are you and where are you</p>
+    <!-- syntax to access variable     <%= %>-->
+    <!-- display data -->
+    <h2><%= name%></h2>
+    <!-- create variable -->
+    <% var i=10;%> <%= i%>
+    <!-- cooment -->
+    <%# name%>
+    <!-- if else -->
+    <% if (id==10) { %>
+    <h2><%= name %></h2>
+    <% } %>
+    <hr />
+    <% if (id === 20) { %>
+    <h2>Welcome, Admin!</h2>
+    <% } else if (id === 10) { %>
+    <h2>Welcome, Editor!</h2>
+    <% } else { %>
+    <h2>Welcome, Guest!</h2>
+    <% } %>
+
+    <!-- FOR LOOPS -->
+    <% for (let a = 0; a < 5; a++) { %>
+    <p>Index: <%= marks[a] %></p>
+    <% } %>
+    <hr />
+
+    <!-- wHILE LOOP -->
+    <% let b = 0; %> <% while (b < 5) { %>
+    <p>Index: <%= b %></p>
+    <hr />
+    <% b++; %> <% } %>
+    <!-- DO while loop -->
+    <% let c = 0; %> <% do { %>
+    <p>Index: <%= c %></p>
+    <% c++; %> <% } while (c < 5); %>
+    <hr />
+
+    <!-- for in loop -->
+    <% const person = { name: 'John', age: 30, job: 'Developer' }; %> <% for
+    (const key in person) { %>
+    <p><%= key %>: <%= person[key] %></p>
+    <hr />
+    <% } %>
+
+    <hr />
+    <% const message = 'Hello'; %> <% for (const char of message) { %>
+    <p><%= char %></p>
+    <% } %>
+  </body>
+</html>
